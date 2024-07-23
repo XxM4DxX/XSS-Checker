@@ -21,6 +21,7 @@ python3 xss_scanner.py expected_urls.txt payloads.txt final_res.txt
 - https://github.com/carlospolop/Auto_Wordlists/blob/main/wordlists/xss.txt
 - https://github.com/payloadbox/xss-payload-list/blob/master/Intruder/xss-payload-list.txt
 - https://github.com/foospidy/payloads/tree/master/other/xss
+- https://github.com/kkrypt0nn/wordlists/blob/main/wordlists/vulnerabilities/xss.txt
          
 
 ## Questions
