@@ -12,8 +12,8 @@ pip3 install requests colorama
 ## Usage
 
 ```bash
-python3 SORT_EXPECTED_URLS.py urls.txt expected_urls.txt
-python3 XSS_CHECKER.py expected_urls.txt
+python3 sort_expected_urls.py urls.txt expected_urls.txt
+python3 xss_scanner.py expected_urls.txt payloads.txt final_res.txt
 ```
 ## Questions
 If you have any questions, don't hesitate to contact me on <a href="https://x.com/XxM4DxX_" target="_0blank">
