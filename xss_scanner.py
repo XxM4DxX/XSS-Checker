@@ -27,32 +27,20 @@ print(
 print()
 print()
 
-# Define the payloads
-payloads = [
-    "<script>alert('XSS')</script>",
-    "<img src=x onerror=alert('XSS')>",
-    "<a href=\"javascript:alert('XSS')\">Click me</a>",
-    "\"><script>alert('XSS')</script>",
-    "<input type=\"text\" value=\"XSS\" onfocus=\"alert('XSS')\">",
-    "<svg onload=alert('XSS')>",
-    "<a href=\"#\" onmouseover=\"alert('XSS')\">Hover me</a>",
-    "<script src=\"http://example.com/xss.js\"></script>",
-    "<iframe src=\"javascript:alert('XSS');\"></iframe>",
-    "<meta http-equiv=\"refresh\" content=\"0;url=javascript:alert('XSS');\">"
-]
-
 def read_file(filepath):
     with open(filepath, 'r') as f:
         return [line.strip() for line in f]
 
-if len(sys.argv) != 3:
-    print("Usage: python3 xss_scanner.py <input_urls.txt> <output_results.txt>")
+if len(sys.argv) != 4:
+    print("Usage: python3 xss_scanner.py <input_urls.txt> <payloads.txt> <output_results.txt>")
     sys.exit(1)
 
 urls_file = sys.argv[1]
-output_file = sys.argv[2]
+payloads_file = sys.argv[2]
+output_file = sys.argv[3]
 
 urls = read_file(urls_file)
+payloads = read_file(payloads_file)
 
 output_lock = threading.Lock()
 
@@ -82,4 +70,4 @@ for payload in payloads:
 for t in threads:
     t.join()
 
-print(Fore.GREEN + "Scanning completed. Results are in " + final_res + Fore.RESET)
+print(Fore.YELLOW + "Scanning completed. Results are in " + output_file + Fore.RESET)
