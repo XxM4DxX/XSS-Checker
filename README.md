@@ -16,15 +16,13 @@ python3 sort_expected_urls.py urls.txt expected_urls.txt
 python3 xss_scanner.py expected_urls.txt payloads.txt final_res.txt
 ```
 ### About payloads
-##### There is a lot of sources for example
+<h5>There is a lot of sources for example: </h5>
 
-         1. https://github.com/carlospolop/Auto_Wordlists/blob/main/wordlists/xss.txt
-         2. https://github.com/payloadbox/xss-payload-list/blob/master/Intruder/xss-payload-list.txt
-         3. https://github.com/foospidy/payloads/tree/master/other/xss
+- https://github.com/carlospolop/Auto_Wordlists/blob/main/wordlists/xss.txt
+- https://github.com/payloadbox/xss-payload-list/blob/master/Intruder/xss-payload-list.txt
+- https://github.com/foospidy/payloads/tree/master/other/xss
          
 
 ## Questions
-If you have any questions, don't hesitate to contact me on <a href="https://x.com/XxM4DxX_" target="_0blank">
-<img src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/twitter.svg" alt="X" width="30" height="30">
-</a>
+If you have any questions, don't hesitate to contact me on <a href="https://x.com/XxM4DxX_" target="_0blank">X.com</a>
 
